@@ -54,10 +54,13 @@
     }
 
     function demoDOM() {
-      DOM.hide('.klass')
-      DOM.show('.klass')
-      DOM.removeClass('.klass', 'shaded')
-      DOM.addClass('.klass', 'shaded')
+      if (SweetSelector.select('.klass')[0].style.display == ''){
+        DOM.hide('.klass')
+        DOM.addClass('.klass', 'shaded')
+      } else {
+        DOM.show('.klass')
+        DOM.removeClass('.klass', 'shaded')
+      }
     }
 
     function demoEventDispatcher() {
